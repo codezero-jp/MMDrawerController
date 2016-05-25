@@ -127,6 +127,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 }
 
 @property (nonatomic, assign, readwrite) MMDrawerSide openSide;
+@property (nonatomic, assign, readwrite) MMDrawerSide lastOpenSide;
 
 @property (nonatomic, strong) UIView * childControllerContainerView;
 @property (nonatomic, strong) MMDrawerCenterContainerView * centerContainerView;
@@ -915,6 +916,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 
 -(void)setOpenSide:(MMDrawerSide)openSide{
     if(_openSide != openSide){
+        _lastOpenSide = _openSide;
         _openSide = openSide;
         [self.centerContainerView setOpenSide:openSide];
         if(openSide == MMDrawerSideNone){

@@ -173,6 +173,13 @@ typedef void (^MMDrawerControllerDrawerVisualStateBlock)(MMDrawerController * dr
 @property (nonatomic, assign, readonly) MMDrawerSide openSide;
 
 /**
+ The last open side of the drawer.
+ 
+ Note this value will change as soon as a pan gesture opens a drawer, or when a open/close animation is finished.
+ */
+@property (nonatomic, assign, readonly) MMDrawerSide lastOpenSide;
+
+/**
  How a user is allowed to open a drawer using gestures. 
  
  By default, this is set to `MMOpenDrawerGestureModeNone`. Note these gestures may affect user interaction with the `centerViewController`, so be sure to use appropriately.
